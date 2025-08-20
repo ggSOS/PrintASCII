@@ -47,8 +47,13 @@
 
 
             // output
-            Console.WriteLine("\nO primeiro aluno(idade: {0}) é {1} o segundo aluno(idade: " +
-                "{2})!", age1, programOutput, age2);
+            Console.WriteLine("\nO primeiro aluno(idade: {0}) é {1} o segundo aluno(idade: {2})!"
+                , age1, programOutput, age2);
+
+
+            // impedir fechamento automático do console
+            Console.Write("\nAperte Enter para finalizar o programa");
+            Console.ReadLine();
         }
     }
 }
