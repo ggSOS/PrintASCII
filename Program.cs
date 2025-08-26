@@ -1,7 +1,9 @@
-﻿namespace Ambiente1
+﻿using System;
+
+namespace Ambiente1
 {
     internal class Program
-    { 
+    {
         /// <summary>
         /// Funcao que recebe um String e a printa
         /// </summary>
@@ -26,13 +28,18 @@
 
         public static void Main(string[] args)
         {
-            Print("Olá, qual o seu nome?\n\t- ");
+            Print(" Olá, qual o seu nome?\n\t- ");
             String nome = Console.ReadLine();
 
-            Print("Opa " + nome + ", diga um valor de raio para eu medir a área da circuferência:\n\t- ");
+            Print(" Opa " + nome + ", diga um valor de raio para eu medir a área da circuferência:\n\t- ");
             Double raio = Double.Parse(Console.ReadLine());
 
-            Print(nome + ", a área de uma circunferência de raio " + raio + " é: " + CalcularAreaCirculo(raio) + ".\n");
+            Print(" " + nome + ", a área de uma circunferência de raio " + raio + " é: " + 
+                CalcularAreaCirculo(raio) + ".\n");
+            
+            // impedir fechamento automático do console
+            Print("\n Aperte Enter para finalizar o programa\n");
+            Console.ReadLine();
         }
     }
 }
