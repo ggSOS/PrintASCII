@@ -1,59 +1,38 @@
 ﻿namespace Ambiente1
 {
     internal class Program
-    {
+    { 
+        /// <summary>
+        /// Funcao que recebe um String e a printa
+        /// </summary>
+        /// <param name="message"> Mensagem a ser printada </param>
+        static void Print(String message)
+        {
+            Console.Write(message);
+            return;
+        }
+
+        /// <summary>
+        /// Funcao que calcula a area de uma circunferencia atraves de um raio
+        /// </summary>
+        /// <param name="raio"> Raio da circunferencia </param>
+        /// <returns> Double saida </returns>
+        static Double CalcularAreaCirculo(Double raio)
+        {
+            Double saida = Math.PI * Math.Pow(raio, 2);
+            return saida;
+        }
+
+
         public static void Main(string[] args)
         {
-            // idade do primeiro aluno
-            int age1;
-            // idade do segundo aluno
-            int age2;
-            // entrada do usuário
-            String userInput;
-            // resultado da comparação para output
-            String programOutput;
+            Print("Olá, qual o seu nome?\n\t- ");
+            String nome = Console.ReadLine();
 
+            Print("Opa " + nome + ", diga um valor de raio para eu medir a área da circuferência:\n\t- ");
+            Double raio = Double.Parse(Console.ReadLine());
 
-            // apresentação do programa
-            Console.WriteLine("\n\n\tO programa a seguir irá pedir a " +
-                "idade de dois alunos para definir quem é o mais velho e quem é o mais novo.");
-            
-
-            // input do aluno 1
-            Console.Write("\nInsira a idade do primeiro aluno:\n\t- ");
-            userInput = Console.ReadLine();
-            age1 = int.Parse(userInput);
-
-
-            // input do aluno 2
-            Console.Write("\nInsira a idade do segundo aluno:\n\t- ");
-            userInput = Console.ReadLine();
-            age2 = int.Parse(userInput);
-
-
-            // definição do output
-            if (age1 > age2)
-            {
-                programOutput = "mais velho que";
-            }
-            else if (age1 == age2)
-            {
-                programOutput = "tão velho quanto";
-            }
-            else
-            {
-                programOutput = "mais novo que";
-            }
-
-
-            // output
-            Console.WriteLine("\nO primeiro aluno(idade: {0}) é {1} o segundo aluno(idade: {2})!"
-                , age1, programOutput, age2);
-
-
-            // impedir fechamento automático do console
-            Console.Write("\nAperte Enter para finalizar o programa");
-            Console.ReadLine();
+            Print(nome + ", a área de uma circunferência de raio " + raio + " é: " + CalcularAreaCirculo(raio) + ".\n");
         }
     }
 }
