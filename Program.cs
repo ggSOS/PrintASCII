@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ambiente1
+﻿namespace Ambiente1
 {
     internal class Program
     {
@@ -34,9 +32,9 @@ namespace Ambiente1
             Print(" Opa " + nome + ", diga um valor de raio para eu medir a área da circuferência:\n\t- ");
             Double raio = Double.Parse(Console.ReadLine());
 
-            Print(" " + nome + ", a área de uma circunferência de raio " + raio + " é: " + 
+            Print(" " + nome + ", a área de uma circunferência de raio " + raio + " é: " +
                 CalcularAreaCirculo(raio) + ".\n");
-            
+
             // impedir fechamento automático do console
             Print("\n Aperte Enter para finalizar o programa\n");
             Console.ReadLine();
